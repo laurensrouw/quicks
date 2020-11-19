@@ -1,4 +1,5 @@
 @import "src/styles/sizes";
+@import "src/styles/colors";
 
 .row {
   display: flex;
@@ -24,43 +25,43 @@
 .red {
   composes: row;
 
-  background-color: red;
+  background-color: $red-600;
 
   .inner,
   .spacer {
-    background-color: darkred;
+    background-color: $red-900;
   }
 }
 
 .yellow {
   composes: row;
 
-  background-color: yellow;
+  background-color: $yellow-400;
 
   .inner,
   .spacer {
-    background-color: darkgoldenrod;
+    background-color: $yellow-700;
   }
 }
 
 .green {
   composes: row;
 
-  background-color: lightgreen;
+  background-color: $green-500;
 
   .inner,
   .spacer {
-    background-color: darkgreen;
+    background-color: $green-800;
   }
 }
 
 .blue {
   composes: row;
 
-  background-color: blue;
+  background-color: $blue-600;
 
   .inner,
   .spacer {
-    background-color: darkblue;
+    background-color: $blue-900;
   }
 }

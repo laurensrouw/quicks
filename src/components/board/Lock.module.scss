@@ -1,4 +1,5 @@
 @import "src/styles/sizes";
+@import "src/styles/colors";
 
 .lock {
   height: $size-xlarge;
@@ -17,9 +18,9 @@
 
   background-color: #ffdddd;
 
-  border-color: darkred;
+  border-color: $red-900;
 
-  color: darkred;
+  color: $red-900;
 }
 
 .yellow {
@@ -27,9 +28,9 @@
 
   background-color: #ffffdd;
 
-  border-color: darkgoldenrod;
+  border-color: $yellow-700;
 
-  color: darkgoldenrod;
+  color: $yellow-700;
 }
 
 .green {
@@ -37,9 +38,9 @@
 
   background-color: #ddffdd;
 
-  border-color: darkgreen;
+  border-color: $green-800;
 
-  color: darkgreen;
+  color: $green-800;
 }
 
 .blue {
@@ -47,7 +48,7 @@
 
   background-color: #ddddff;
 
-  border-color: darkblue;
+  border-color: $blue-900;
 
-  color: darkblue;
+  color: $blue-900;
 }
