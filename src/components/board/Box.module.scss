@@ -1,0 +1,67 @@
+@import "src/styles/sizes";
+
+.box {
+  height: $size-xlarge;
+  width: $size-xlarge;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $size-small;
+
+  border: $size-xsmall solid black;
+  border-width: $size-xsmall $size-2xsmall;
+  border-radius: $size-medium;
+
+  font-size: $size-normal * 1.25;
+  font-weight: 700;
+}
+
+.box:first-child {
+  border-left-width: $size-xsmall;
+}
+
+.box:last-child {
+  border-right-width: $size-xsmall;
+}
+
+.red {
+  composes: box;
+
+  background-color: #ffdddd;
+
+  border-color: darkred;
+
+  color: darkred;
+}
+
+.yellow {
+  composes: box;
+
+  background-color: #ffffdd;
+
+  border-color: darkgoldenrod;
+
+  color: darkgoldenrod;
+}
+
+.green {
+  composes: box;
+
+  background-color: #ddffdd;
+
+  border-color: darkgreen;
+
+  color: darkgreen;
+}
+
+.blue {
+  composes: box;
+
+  background-color: #ddddff;
+
+  border-color: darkblue;
+
+  color: darkblue;
+}

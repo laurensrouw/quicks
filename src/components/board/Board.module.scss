@@ -1,9 +1,11 @@
+@import "src/styles/sizes";
+
 .board {
-  border-radius: 0.25rem;
+  border-radius: $size-small;
 
-  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 $size-small $size-2xsmall rgba(0, 0, 0, 0.1);
 
-  padding: 20px;
+  padding: 1rem;
 
   background-color: #efefef;
 }

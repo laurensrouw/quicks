@@ -1,0 +1,42 @@
+@import "src/styles/sizes";
+
+.row {
+  margin: $size-small 0;
+  padding: $size-small;
+
+  border-radius: $size-small;
+}
+
+.inner {
+  display: flex;
+
+  border-radius: $size-medium;
+}
+
+.red {
+  composes: row;
+
+  background-color: red;
+
+  .inner {
+    background-color: darkred;
+  }
+}
+
+.yellow {
+  composes: row;
+
+  background-color: yellow;
+}
+
+.green {
+  composes: row;
+
+  background-color: lightgreen;
+}
+
+.blue {
+  composes: row;
+
+  background-color: blue;
+}
