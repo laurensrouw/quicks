@@ -24,25 +24,25 @@
 .red {
   composes: score;
 
-  border-color: $red-900;
+  border-color: $red-600;
 }
 
 .yellow {
   composes: score;
 
-  border-color: $yellow-700;
+  border-color: $yellow-400;
 }
 
 .green {
   composes: score;
 
-  border-color: $green-700;
+  border-color: $green-500;
 }
 
 .blue {
   composes: score;
 
-  border-color: $blue-900;
+  border-color: $blue-600;
 }
 
 .gray {
