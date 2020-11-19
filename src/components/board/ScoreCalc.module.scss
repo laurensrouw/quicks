@@ -1,0 +1,60 @@
+@import "src/styles/sizes";
+@import "src/styles/colors";
+
+.scoreCalc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: $size-medium $size-normal $size-normal $size-normal;
+
+  background-color: $gray-200;
+}
+
+.score {
+  height: $size-large;
+  width: $size-xlarge;
+
+  border-radius: $size-medium;
+  border: $size-xsmall solid black;
+
+  background-color: white;
+}
+
+.red {
+  composes: score;
+
+  border-color: $red-900;
+}
+
+.yellow {
+  composes: score;
+
+  border-color: $yellow-700;
+}
+
+.green {
+  composes: score;
+
+  border-color: $green-700;
+}
+
+.blue {
+  composes: score;
+
+  border-color: $blue-900;
+}
+
+.gray {
+  composes: score;
+
+  border-color: $gray-400;
+}
+
+.total {
+  composes: score;
+
+  width: $size-xlarge * 4;
+
+  border-color: $gray-800;
+}

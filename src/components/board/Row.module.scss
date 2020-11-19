@@ -5,10 +5,14 @@
   display: flex;
   align-items: center;
 
-  margin: $size-small 0;
+  margin: $size-small $size-normal;
   padding: $size-small;
 
   border-radius: $size-small;
+}
+
+.row:first-child {
+  margin-top: $size-normal;
 }
 
 .inner {

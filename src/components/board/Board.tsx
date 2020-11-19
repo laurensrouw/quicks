@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Board.module.scss";
 
 import Row from "./Row";
+import ScoreCalc from "./ScoreCalc";
 import ScoreInfo from "./ScoreInfo";
 
 const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -15,6 +16,7 @@ function Board() {
       <Row color="GREEN" numbers={reversed} />
       <Row color="BLUE" numbers={reversed} />
       <ScoreInfo />
+      <ScoreCalc />
     </div>
   );
 }

@@ -1,11 +1,10 @@
 @import "src/styles/sizes";
+@import "src/styles/colors";
 
 .board {
   border-radius: $size-small;
 
   box-shadow: 0 0 $size-small $size-2xsmall rgba(0, 0, 0, 0.1);
 
-  padding: 1rem;
-
-  background-color: #efefef;
+  background-color: $gray-50;
 }
