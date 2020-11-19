@@ -1,8 +1,14 @@
 import React from "react";
-import "./App.module.css";
+import styles from "./App.module.css";
+
+import Board from "./components/board/Board";
 
 function App() {
-  return <div className="App">Quicks</div>;
+  return (
+    <div className={styles.quicksApp}>
+      <Board />
+    </div>
+  );
 }
 
 export default App;
