@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Board.module.scss";
 
 import Row from "./Row";
+import ScoreInfo from "./ScoreInfo";
 
 function Board() {
   return (
@@ -10,6 +11,7 @@ function Board() {
       <Row color="YELLOW" />
       <Row color="GREEN" />
       <Row color="BLUE" />
+      <ScoreInfo />
     </div>
   );
 }
