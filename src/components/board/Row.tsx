@@ -18,7 +18,9 @@ function Row(props: Props) {
     <div className={style}>
       <div className={styles.inner}>
         {props.numbers.map((n) => (
-          <Box color={props.color}>{n}</Box>
+          <Box color={props.color} key={n}>
+            {n}
+          </Box>
         ))}
       </div>
       <div className={styles.spacer} />
