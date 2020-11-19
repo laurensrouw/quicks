@@ -1,0 +1,53 @@
+@import "src/styles/sizes";
+
+.lock {
+  height: $size-xlarge;
+  width: $size-xlarge;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: $size-xsmall solid black;
+}
+
+.red {
+  composes: lock;
+
+  background-color: #ffdddd;
+
+  border-color: darkred;
+
+  color: darkred;
+}
+
+.yellow {
+  composes: lock;
+
+  background-color: #ffffdd;
+
+  border-color: darkgoldenrod;
+
+  color: darkgoldenrod;
+}
+
+.green {
+  composes: lock;
+
+  background-color: #ddffdd;
+
+  border-color: darkgreen;
+
+  color: darkgreen;
+}
+
+.blue {
+  composes: lock;
+
+  background-color: #ddddff;
+
+  border-color: darkblue;
+
+  color: darkblue;
+}

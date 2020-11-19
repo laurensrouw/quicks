@@ -4,6 +4,7 @@ import styles from "./Row.module.scss";
 import { DiceColor } from "../../model/colors";
 
 import Box from "./Box";
+import Lock from "./Lock";
 
 interface Props {
   color: DiceColor;
@@ -27,6 +28,8 @@ function Row(props: Props) {
         <Box color={props.color}>11</Box>
         <Box color={props.color}>12</Box>
       </div>
+      <div className={styles.spacer} />
+      <Lock color={props.color} />
     </div>
   );
 }
