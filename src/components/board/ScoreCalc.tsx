@@ -29,8 +29,9 @@ function ScoreCalc() {
 function calcScore(row: boolean[]) {
   const scores = [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78];
   const count = row.reduce((prev, cur) => (cur ? prev + 1 : prev), 0);
+  const bonus = count >= 5 && row[10] ? 1 : 0;
 
-  return scores[count];
+  return scores[count + bonus];
 }
 
 export default ScoreCalc;
