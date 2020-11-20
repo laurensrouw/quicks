@@ -16,7 +16,7 @@
 .red {
   composes: lock;
 
-  background-color: #ffdddd;
+  background-color: $red-100;
 
   border-color: $red-900;
 
@@ -32,7 +32,7 @@
 .yellow {
   composes: lock;
 
-  background-color: #ffffdd;
+  background-color: $yellow-100;
 
   border-color: $yellow-700;
 
@@ -48,7 +48,7 @@
 .green {
   composes: lock;
 
-  background-color: #ddffdd;
+  background-color: $green-100;
 
   border-color: $green-800;
 
@@ -64,7 +64,7 @@
 .blue {
   composes: lock;
 
-  background-color: #ddddff;
+  background-color: $blue-100;
 
   border-color: $blue-900;
 
