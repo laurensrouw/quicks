@@ -23,6 +23,12 @@
   color: $red-900;
 }
 
+.redChecked {
+  composes: red;
+
+  background-color: scale-color($red-600, $saturation: -25%);
+}
+
 .yellow {
   composes: lock;
 
@@ -31,6 +37,12 @@
   border-color: $yellow-700;
 
   color: $yellow-700;
+}
+
+.yellowChecked {
+  composes: yellow;
+
+  background-color: scale-color($yellow-400, $saturation: -25%);
 }
 
 .green {
@@ -43,6 +55,12 @@
   color: $green-800;
 }
 
+.greenChecked {
+  composes: green;
+
+  background-color: scale-color($green-500, $saturation: -25%);
+}
+
 .blue {
   composes: lock;
 
@@ -51,4 +69,10 @@
   border-color: $blue-900;
 
   color: $blue-900;
+}
+
+.blueChecked {
+  composes: blue;
+
+  background-color: scale-color($blue-600, $saturation: -25%);
 }
