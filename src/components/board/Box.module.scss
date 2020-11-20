@@ -37,10 +37,16 @@
   color: $red-900;
 }
 
-.redDisabled {
+.redChecked {
   composes: red;
 
   background-color: scale-color($red-600, $saturation: -25%);
+}
+
+.redDisabled {
+  composes: red;
+
+  color: scale-color($red-400, $saturation: -50%);
 }
 
 .yellow {
@@ -53,10 +59,16 @@
   color: $yellow-700;
 }
 
-.yellowDisabled {
+.yellowChecked {
   composes: yellow;
 
   background-color: scale-color($yellow-400, $saturation: -25%);
+}
+
+.yellowDisabled {
+  composes: yellow;
+
+  color: scale-color($yellow-300, $saturation: -30%);
 }
 
 .green {
@@ -69,10 +81,16 @@
   color: $green-800;
 }
 
-.greenDisabled {
+.greenChecked {
   composes: green;
 
   background-color: scale-color($green-500, $saturation: -25%);
+}
+
+.greenDisabled {
+  composes: green;
+
+  color: scale-color($green-400, $saturation: -50%);
 }
 
 .blue {
@@ -85,8 +103,14 @@
   color: $blue-900;
 }
 
-.blueDisabled {
+.blueChecked {
   composes: blue;
 
   background-color: scale-color($blue-600, $saturation: -25%);
+}
+
+.blueDisabled {
+  composes: blue;
+
+  color: scale-color($blue-500, $saturation: -50%);
 }

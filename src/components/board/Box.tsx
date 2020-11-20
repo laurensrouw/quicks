@@ -17,8 +17,10 @@ function Box(props: Props) {
   const row = useSelector((state: RootState) => state[props.color]);
   const number = row.numbers[props.index];
   const checked = row.checked[props.index];
+  const disabled =
+    props.index < row.checked.reduce((prev, cur, idx) => (cur ? idx : prev), 0);
 
-  const style = colorToStyle(props.color, checked);
+  const style = colorToStyle(props.color, checked, disabled);
 
   const checkNumber = () => {
     dispatch(check({ color: props.color, index: props.index }));
@@ -31,16 +33,32 @@ function Box(props: Props) {
   );
 }
 
-function colorToStyle(color: DiceColor, checked: boolean) {
+function colorToStyle(color: DiceColor, checked: boolean, disabled: boolean) {
   switch (color) {
     case "RED":
-      return checked ? styles.redDisabled : styles.red;
+      return checked
+        ? styles.redChecked
+        : disabled
+        ? styles.redDisabled
+        : styles.red;
     case "YELLOW":
-      return checked ? styles.yellowDisabled : styles.yellow;
+      return checked
+        ? styles.yellowChecked
+        : disabled
+        ? styles.yellowDisabled
+        : styles.yellow;
     case "GREEN":
-      return checked ? styles.greenDisabled : styles.green;
+      return checked
+        ? styles.greenChecked
+        : disabled
+        ? styles.greenDisabled
+        : styles.green;
     case "BLUE":
-      return checked ? styles.blueDisabled : styles.blue;
+      return checked
+        ? styles.blueChecked
+        : disabled
+        ? styles.blueDisabled
+        : styles.blue;
   }
 }
 

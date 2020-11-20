@@ -9,7 +9,7 @@ interface RowState {
 
 type RowsSliceState = Record<DiceColor, RowState>;
 
-export interface CheckActionPayload {
+interface CheckActionPayload {
   color: DiceColor;
   index: number;
 }
