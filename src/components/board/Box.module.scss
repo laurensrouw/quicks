@@ -40,7 +40,7 @@
 .redDisabled {
   composes: red;
 
-  background-color: $red-600;
+  background-color: scale-color($red-600, $saturation: -25%);
 }
 
 .yellow {
@@ -56,7 +56,7 @@
 .yellowDisabled {
   composes: yellow;
 
-  background-color: $yellow-400;
+  background-color: scale-color($yellow-400, $saturation: -25%);
 }
 
 .green {
@@ -72,7 +72,7 @@
 .greenDisabled {
   composes: green;
 
-  background-color: $green-500;
+  background-color: scale-color($green-500, $saturation: -25%);
 }
 
 .blue {
@@ -88,5 +88,5 @@
 .blueDisabled {
   composes: blue;
 
-  background-color: $blue-600;
+  background-color: scale-color($blue-600, $saturation: -25%);
 }
