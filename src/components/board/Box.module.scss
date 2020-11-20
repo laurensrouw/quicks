@@ -19,6 +19,24 @@
   font-weight: 700;
 }
 
+.box:hover {
+  border-top-width: $size-2xsmall;
+
+  cursor: pointer;
+}
+
+.redChecked:hover,
+.redDisabled:hover,
+.yellowChecked:hover,
+.yellowDisabled:hover,
+.greenChecked:hover,
+.greenDisabled:hover,
+.blueChecked:hover,
+.blueDisabled:hover {
+  cursor: inherit;
+  border-top-width: $size-xsmall;
+}
+
 .box:first-child {
   border-left-width: $size-xsmall;
 }
