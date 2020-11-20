@@ -8,7 +8,6 @@ import Lock from "./Lock";
 
 interface Props {
   color: DiceColor;
-  numbers: number[];
 }
 
 function Row(props: Props) {
@@ -17,10 +16,8 @@ function Row(props: Props) {
   return (
     <div className={style}>
       <div className={styles.inner}>
-        {props.numbers.map((n) => (
-          <Box color={props.color} key={n}>
-            {n}
-          </Box>
+        {Array.from(Array(11).keys()).map((n) => (
+          <Box color={props.color} index={n} key={n} />
         ))}
       </div>
       <div className={styles.spacer} />

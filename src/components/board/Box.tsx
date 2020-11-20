@@ -1,29 +1,46 @@
-import React, { ReactNode } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styles from "./Box.module.scss";
 
 import { DiceColor } from "../../model/colors";
 
+import { check } from "../../redux/rows";
+import { RootState } from "../../redux/store";
+
 interface Props {
   color: DiceColor;
-  children: ReactNode;
+  index: number;
 }
 
 function Box(props: Props) {
-  const style = colorToStyle(props.color);
+  const dispatch = useDispatch();
+  const row = useSelector((state: RootState) => state[props.color]);
+  const number = row.numbers[props.index];
+  const checked = row.checked[props.index];
 
-  return <div className={style}>{props.children}</div>;
+  const style = colorToStyle(props.color, checked);
+
+  const checkNumber = () => {
+    dispatch(check({ color: props.color, index: props.index }));
+  };
+
+  return (
+    <div className={style} onClick={checkNumber}>
+      {number}
+    </div>
+  );
 }
 
-function colorToStyle(color: DiceColor) {
+function colorToStyle(color: DiceColor, checked: boolean) {
   switch (color) {
     case "RED":
-      return styles.red;
+      return checked ? styles.redDisabled : styles.red;
     case "YELLOW":
-      return styles.yellow;
+      return checked ? styles.yellowDisabled : styles.yellow;
     case "GREEN":
-      return styles.green;
+      return checked ? styles.greenDisabled : styles.green;
     case "BLUE":
-      return styles.blue;
+      return checked ? styles.blueDisabled : styles.blue;
   }
 }
 

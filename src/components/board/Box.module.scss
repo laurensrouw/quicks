@@ -30,39 +30,63 @@
 .red {
   composes: box;
 
-  background-color: #ffdddd;
+  background-color: $red-100;
 
   border-color: $red-900;
 
   color: $red-900;
 }
 
+.redDisabled {
+  composes: red;
+
+  background-color: $red-600;
+}
+
 .yellow {
   composes: box;
 
-  background-color: #ffffdd;
+  background-color: $yellow-100;
 
   border-color: $yellow-700;
 
   color: $yellow-700;
 }
 
+.yellowDisabled {
+  composes: yellow;
+
+  background-color: $yellow-400;
+}
+
 .green {
   composes: box;
 
-  background-color: #ddffdd;
+  background-color: $green-100;
 
   border-color: $green-800;
 
   color: $green-800;
 }
 
+.greenDisabled {
+  composes: green;
+
+  background-color: $green-500;
+}
+
 .blue {
   composes: box;
 
-  background-color: #ddddff;
+  background-color: $blue-100;
 
   border-color: $blue-900;
 
   color: $blue-900;
+}
+
+.blueDisabled {
+  composes: blue;
+
+  background-color: $blue-600;
 }
