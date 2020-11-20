@@ -15,15 +15,20 @@ interface Props {
 function Box(props: Props) {
   const dispatch = useDispatch();
   const row = useSelector((state: RootState) => state[props.color]);
+
   const number = row.numbers[props.index];
   const checked = row.checked[props.index];
   const disabled =
     props.index < row.checked.reduce((prev, cur, idx) => (cur ? idx : prev), 0);
+  const count = row.checked.reduce((prev, cur) => (cur ? prev + 1 : prev), 0);
+  const bonusDisabled = props.index === 10 && count < 5;
 
-  const style = colorToStyle(props.color, checked, disabled);
+  const style = colorToStyle(props.color, checked, disabled || bonusDisabled);
 
   const checkNumber = () => {
-    dispatch(check({ color: props.color, index: props.index }));
+    if (!checked && !disabled && !bonusDisabled) {
+      dispatch(check({ color: props.color, index: props.index }));
+    }
   };
 
   return (
