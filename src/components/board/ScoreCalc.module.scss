@@ -15,10 +15,16 @@
   height: $size-large;
   width: $size-xlarge;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border-radius: $size-medium;
   border: $size-xsmall solid black;
 
   background-color: white;
+
+  font-weight: 500;
 }
 
 .red {
@@ -57,4 +63,6 @@
   width: $size-xlarge * 4;
 
   border-color: $gray-800;
+
+  font-weight: 700;
 }
