@@ -1,21 +1,20 @@
 import React from "react";
 import styles from "./Lock.module.scss";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLock, faLockOpen } from "@fortawesome/free-solid-svg-icons";
 
 import { DiceColor } from "../../model/colors";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { countChecked, getChecked } from "../../redux/rows";
 
 interface Props {
   color: DiceColor;
 }
 
 function Lock(props: Props) {
-  const checked = useSelector((state: RootState) => state[props.color].checked);
-
-  const count = checked.reduce((prev, cur) => (cur ? prev + 1 : prev), 0);
-  const bonus = count >= 5 && checked[10];
+  const count = useSelector(countChecked(props.color));
+  const checked = useSelector(getChecked(props.color, 10));
+  const bonus = count >= 5 && checked;
 
   const style = colorsToStyle(props.color, bonus);
 

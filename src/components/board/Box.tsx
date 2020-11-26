@@ -4,8 +4,13 @@ import styles from "./Box.module.scss";
 
 import { DiceColor } from "../../model/colors";
 
-import { check } from "../../redux/rows";
-import { RootState } from "../../redux/store";
+import {
+  check,
+  countChecked,
+  getChecked,
+  getDiceNumber,
+  maxChecked,
+} from "../../redux/rows";
 
 interface Props {
   color: DiceColor;
@@ -14,13 +19,13 @@ interface Props {
 
 function Box(props: Props) {
   const dispatch = useDispatch();
-  const row = useSelector((state: RootState) => state[props.color]);
 
-  const number = row.numbers[props.index];
-  const checked = row.checked[props.index];
-  const disabled =
-    props.index < row.checked.reduce((prev, cur, idx) => (cur ? idx : prev), 0);
-  const count = row.checked.reduce((prev, cur) => (cur ? prev + 1 : prev), 0);
+  const number = useSelector(getDiceNumber(props.color, props.index));
+  const checked = useSelector(getChecked(props.color, props.index));
+  const count = useSelector(countChecked(props.color));
+  const max = useSelector(maxChecked(props.color));
+
+  const disabled = props.index < max;
   const bonusDisabled = props.index === 10 && count < 5;
 
   const style = colorToStyle(props.color, checked, disabled || bonusDisabled);

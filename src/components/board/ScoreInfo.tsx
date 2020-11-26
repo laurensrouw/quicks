@@ -1,7 +1,17 @@
 import React from "react";
 import styles from "./ScoreInfo.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getFails, increment } from "../../redux/fails";
 
 function ScoreInfo() {
+  const fails = useSelector(getFails);
+  const dispatch = useDispatch();
+
+  const checkFail = () => {
+    dispatch(increment());
+  };
+
   return (
     <div className={styles.scoreInfo}>
       <div className={styles.labels}>
@@ -71,10 +81,18 @@ function ScoreInfo() {
           Elke mislukte worp <strong>-5</strong>
         </div>
         <div className={styles.failBoxes}>
-          <div className={styles.failBox} />
-          <div className={styles.failBox} />
-          <div className={styles.failBox} />
-          <div className={styles.failBox} />
+          <div className={styles.failBox} onClick={checkFail}>
+            {fails >= 1 ? "X" : ""}
+          </div>
+          <div className={styles.failBox} onClick={checkFail}>
+            {fails >= 2 ? "X" : ""}
+          </div>
+          <div className={styles.failBox} onClick={checkFail}>
+            {fails >= 3 ? "X" : ""}
+          </div>
+          <div className={styles.failBox} onClick={checkFail}>
+            {fails >= 4 ? "X" : ""}
+          </div>
         </div>
       </div>
     </div>

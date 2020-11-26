@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { Dice, DiceColor } from "../model/colors";
+import { RootState } from "./store";
 
 interface RowState {
   numbers: Dice[];
@@ -14,7 +15,7 @@ interface CheckActionPayload {
   index: number;
 }
 
-const redSlice = createSlice({
+const rowsSlice = createSlice({
   name: "rows",
   initialState: {
     RED: {
@@ -89,6 +90,46 @@ const redSlice = createSlice({
   },
 });
 
-export const { check } = redSlice.actions;
+export const getDiceNumber = (color: DiceColor, index: number) => (
+  state: RootState
+) => {
+  return state.rows[color].numbers[index];
+};
 
-export default redSlice.reducer;
+export const getChecked = (color: DiceColor, index: number) => (
+  state: RootState
+) => {
+  return state.rows[color].checked[index];
+};
+
+export const countChecked = (color: DiceColor) => (state: RootState) => {
+  return state.rows[color].checked.filter((el) => el).length;
+};
+
+export const maxChecked = (color: DiceColor) => (state: RootState) => {
+  return state.rows[color].checked.reduce(
+    (prev, cur, idx) => (cur ? idx : prev),
+    0
+  );
+};
+
+function calcScore(row: boolean[]) {
+  const scores = [0, 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78];
+  const count = row.reduce((prev, cur) => (cur ? prev + 1 : prev), 0);
+  const bonus = count >= 5 && row[10] ? 1 : 0;
+
+  return scores[count + bonus];
+}
+
+export const getScore = (state: RootState) => {
+  return {
+    red: calcScore(state.rows.RED.checked),
+    yellow: calcScore(state.rows.YELLOW.checked),
+    green: calcScore(state.rows.GREEN.checked),
+    blue: calcScore(state.rows.BLUE.checked),
+  };
+};
+
+export const { check } = rowsSlice.actions;
+
+export default rowsSlice.reducer;
